@@ -1,0 +1,16 @@
+name: Commit Lint
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - edited
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate Commit Messages
+        uses: wagoid/commitlint-github-action@v6

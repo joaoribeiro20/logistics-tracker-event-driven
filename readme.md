@@ -60,17 +60,21 @@ Este serviço não gerencia cadastro de usuários, produtos ou pedidos. Esses da
 
 ## 🛠️ Tecnologias
 
-| Tecnologia | Uso |
-|---|---|
-| Java 21 | Linguagem principal |
-| Spring Boot 3.3 | Framework |
-| Hibernate / JPA | Persistência |
-| PostgreSQL | Banco de dados |
-| RabbitMQ | Mensageria entre serviços |
-| Prometheus | Coleta de métricas |
-| Grafana | Visualização de métricas |
-| Swagger / OpenAPI | Documentação da API |
-| Docker / Docker Compose | Containerização |
+| Tecnologia              | Uso                        |
+|-------------------------|----------------------------|
+| Java 21                 | Linguagem principal        |
+| Spring Boot 3.3         | Framework                  |
+| Hibernate / JPA         | Persistência               |
+| PostgreSQL              | Banco de dados             |
+| RabbitMQ                | Mensageria entre serviços  |
+| Prometheus              | Coleta de métricas         |
+| Grafana                 | Visualização de métricas   |
+| Swagger / OpenAPI       | Documentação da API        |
+| Docker / Docker Compose | Containerização            |
+| Redis                   | Cache                      |
+| Spring Security + JWT   | Auth                       |
+| JUnit                   | Testes unitários           |
+| Spring Cloud            | Ecossistema para microsserviços|
 
 ---
 
@@ -83,6 +87,11 @@ Este serviço não gerencia cadastro de usuários, produtos ou pedidos. Esses da
 - API First e REST
 - Anti-Corruption Layer (ACL)
 - Dependency Inversion (ports & adapters)
+- Outbox Pattern (PENDENTE)
+- Circuit Breaker (PENDENTE)
+- Retry Pattern (PENDENTE)
+- Rate Limiting (PENDENTE)
+- CI/CD: pipeline, lint, testes automáticos e deploy automatizado (PENDENTE)
 
 ---
 
