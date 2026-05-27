@@ -6,52 +6,82 @@ import jakarta.persistence.*;
 @Table(name = "addresses")
 public class AddressEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @Column(nullable = false)
-    private String street;
+  @Column(nullable = false)
+  private String street;
 
-    @Column(nullable = false)
-    private String city;
+  @Column(nullable = false)
+  private String city;
 
-    @Column(nullable = false)
-    private String state;
+  @Column(nullable = false)
+  private String state;
 
-    @Column(name = "zip_code", nullable = false)
-    private String zipCode;
+  @Column(name = "zip_code", nullable = false)
+  private String zipCode;
 
-    @Column(nullable = false)
-    private String country;
+  @Column(nullable = false)
+  private String country;
 
-    public AddressEntity() {}
+  public AddressEntity() {}
 
-    public AddressEntity(Long id, String street, String city,
-                         String state, String zipCode, String country) {
-        this.id = id;
-        this.street = street;
-        this.city = city;
-        this.state = state;
-        this.zipCode = zipCode;
-        this.country = country;
-    }
+  public AddressEntity(
+      Long id, String street, String city, String state, String zipCode, String country) {
+    this.id = id;
+    this.street = street;
+    this.city = city;
+    this.state = state;
+    this.zipCode = zipCode;
+    this.country = country;
+  }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+  public Long getId() {
+    return id;
+  }
 
-    public String getStreet() { return street; }
-    public void setStreet(String street) { this.street = street; }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public String getCity() { return city; }
-    public void setCity(String city) { this.city = city; }
+  public String getStreet() {
+    return street;
+  }
 
-    public String getState() { return state; }
-    public void setState(String state) { this.state = state; }
+  public void setStreet(String street) {
+    this.street = street;
+  }
 
-    public String getZipCode() { return zipCode; }
-    public void setZipCode(String zipCode) { this.zipCode = zipCode; }
+  public String getCity() {
+    return city;
+  }
 
-    public String getCountry() { return country; }
-    public void setCountry(String country) { this.country = country; }
+  public void setCity(String city) {
+    this.city = city;
+  }
+
+  public String getState() {
+    return state;
+  }
+
+  public void setState(String state) {
+    this.state = state;
+  }
+
+  public String getZipCode() {
+    return zipCode;
+  }
+
+  public void setZipCode(String zipCode) {
+    this.zipCode = zipCode;
+  }
+
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
+  }
 }

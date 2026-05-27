@@ -8,23 +8,30 @@ import org.springframework.stereotype.Component;
 @Component
 public class ScanRegistradoListener {
 
-    @Async
-    @EventListener
-    public void handle(ScanRegistradoEvent event) {
-        log(event);
-        notify(event);
-    }
+  @Async
+  @EventListener
+  public void handle(ScanRegistradoEvent event) {
+    log(event);
+    notify(event);
+  }
 
-    private void log(ScanRegistradoEvent event) {
-        // LogUseCase vai entrar aqui depois
-        System.out.println("[LOG] Scan registrado — pedido: " + event.getOrderId()
-                + " | status: " + event.getStatus()
-                + " | em: " + event.getOccurredAt());
-    }
+  private void log(ScanRegistradoEvent event) {
+    // LogUseCase vai entrar aqui depois
+    System.out.println(
+        "[LOG] Scan registrado — pedido: "
+            + event.getOrderId()
+            + " | status: "
+            + event.getStatus()
+            + " | em: "
+            + event.getOccurredAt());
+  }
 
-    private void notify(ScanRegistradoEvent event) {
-        // NotificationUseCase vai entrar aqui depois
-        System.out.println("[NOTIFY] Notificando cliente do pedido: " + event.getOrderId()
-                + " | novo status: " + event.getStatus());
-    }
+  private void notify(ScanRegistradoEvent event) {
+    // NotificationUseCase vai entrar aqui depois
+    System.out.println(
+        "[NOTIFY] Notificando cliente do pedido: "
+            + event.getOrderId()
+            + " | novo status: "
+            + event.getStatus());
+  }
 }

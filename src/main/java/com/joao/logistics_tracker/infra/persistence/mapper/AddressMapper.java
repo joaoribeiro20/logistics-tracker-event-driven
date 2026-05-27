@@ -7,27 +7,25 @@ import org.springframework.stereotype.Component;
 @Component
 public class AddressMapper {
 
-    public AddressEntity toEntity(Address domain) {
-        if (domain == null) return null;
-        return new AddressEntity(
-                domain.getId(),
-                domain.getStreet(),
-                domain.getCity(),
-                domain.getState(),
-                domain.getZipCode(),
-                domain.getCountry()
-        );
-    }
+  public AddressEntity toEntity(Address domain) {
+    if (domain == null) return null;
+    return new AddressEntity(
+        domain.getId(),
+        domain.getStreet(),
+        domain.getCity(),
+        domain.getState(),
+        domain.getZipCode(),
+        domain.getCountry());
+  }
 
-    public Address toDomain(AddressEntity entity) {
-        if (entity == null) return null;
-        return new Address(
-                entity.getId(),
-                entity.getStreet(),
-                entity.getCity(),
-                entity.getState(),
-                entity.getZipCode(),
-                entity.getCountry()
-        );
-    }
+  public Address toDomain(AddressEntity entity) {
+    if (entity == null) return null;
+    return new Address(
+        entity.getId(),
+        entity.getStreet(),
+        entity.getCity(),
+        entity.getState(),
+        entity.getZipCode(),
+        entity.getCountry());
+  }
 }
