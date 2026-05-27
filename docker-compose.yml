@@ -66,6 +66,21 @@ services:
     depends_on:
       - prometheus
 
+  redis:
+    image: redis:7-alpine
+    container_name: logistics-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - logistics-network
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   app:
     build: .
     container_name: logistics-app
@@ -94,6 +109,7 @@ volumes:
   postgres_data:
   rabbitmq_data:
   grafana_data:
+  redis_data:
 
 networks:
   logistics-network:

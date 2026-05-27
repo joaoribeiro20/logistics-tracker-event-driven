@@ -13,16 +13,19 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "Tracking", description = "Operações de rastreamento de produtos")
 public class TrackingController {
 
-    private final RegisterScanUseCase registerScanUseCase;
+  private final RegisterScanUseCase registerScanUseCase;
 
-    public TrackingController(RegisterScanUseCase registerScanUseCase) {
-        this.registerScanUseCase = registerScanUseCase;
-    }
+  public TrackingController(RegisterScanUseCase registerScanUseCase) {
+    this.registerScanUseCase = registerScanUseCase;
+  }
 
-    @PostMapping
-    @Operation(summary = "Registrar um scan", description = "Registra um novo evento de rastreamento para um pedido")
-    public ResponseEntity<RegisterScanResponse> registerScan(@RequestBody RegisterScanRequest request) {
-        RegisterScanResponse response = registerScanUseCase.execute(request);
-        return ResponseEntity.ok(response);
-    }
+  @PostMapping
+  @Operation(
+      summary = "Registrar um scan",
+      description = "Registra um novo evento de rastreamento para um pedido")
+  public ResponseEntity<RegisterScanResponse> registerScan(
+      @RequestBody RegisterScanRequest request) {
+    RegisterScanResponse response = registerScanUseCase.execute(request);
+    return ResponseEntity.ok(response);
+  }
 }
